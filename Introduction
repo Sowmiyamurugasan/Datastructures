@@ -1,0 +1,128 @@
+what is data?
+----------------
+
+large amount of data should be storeed on strucdtured and easily accessible manner.
+
+If u create app-->what user is fetching is called data.
+
+
+How it is stored in structured manner?
+
+Either by usage of array aor linked list
+
+
+what's array?when to use
+
+--->its uses continous memory allocation.the size should be prefdefined and cant be increased dynamically.
+
+---->if u already know size of the datas then can use ARRAY.
+
+what can be done on array;
+-----------------------------
+
+                 1          2              3          9      7
+                 a[0]      a[1]            a[2]     a[3]   a[4]      a[5]
+                             |
+                             |
+                             |
+                             4->updates to new value
+                 
+                 a[5]={1,2,3}
+                 
+                 
+  1)Read --->system.out.println(a[0]);------------------->time complexity---->o(1)[it already knows address to it will take one microsecond to read)
+  2)write--->a[4]=7;------------------->time complexity---->o(1)[it already knows address to it will take one microsecond to  write)
+  3)update-->a[1]=4;------------------->time complexity---->o(1)[it already knows address to it will take one microsecond to  update)
+  4)Insert-->a[2]=5;------------------->time complexity---->o(n)[Here it should first move 3 which is in a[2] to a[3] postion & 9 to a[4] postion and 7 to a[5] postition then it will insert] 
+  4)Delete-->a[1]=2;------------------->time complexity---->o(n)[Here it should first move 3 which is in a[1] to a[1] postion & 9 to a[2] postion and 7 to a[3] postition then it will insert] 
+  4)search-->a[1]=2;------------------->time complexity---->o(n)[Here it will go through every record to find given postion of array)
+In array insertion  and deletion  follows linear graph which would be worst case.
+
+Disadvantages:
+---------------
+1)Fixed size
+2)memory wastage
+3)double size array declare
+4)
+
+
+
+Linked List:
+-------------
+
+List:
+
+1)insert/delete & manage without memory wastage
+2)
+                                          data|ptr(tail)
+  Data|ptr    \          / data|ptr  \             /      
+   Node          \     /                \        /
+   (Head)        data|ptr               data|ptr
+
+
+1)more flexibility & but meory is more
+2)dynamic expand and shrink
+
+
+----------------------------------------------------------------------------------------------
+
+1)Insert at beginning:
+---------------------
+
+1)create:
+-------------
+
+if head===null-->data(9)|ptr(null)
+
+
+  2)assign data and pointer values
+  
+  3)make head point to first data
+  head|first record
+  
+  time complexity:o(1)
+  
+  
+  ----------------------------------------------------------------------------------------------
+  
+  2)traverse:
+ ----------------
+ 
+ 
+ 1)get first rec from head
+ 2)get next node from current node pointer till null pointer(via loop)->time complex(o(n))
+
+ 
+ ----------------------------------------------------------------------------------------------
+ 3)Read/update an element at pos:
+ ---------------------------
+ 1)get first rec from head
+ 2)get next node from current node pointer till "pos" times->time complex(o(n))
+
+   ----------------------------------------------------------------------------------------------
+4)Insert at pos 2:
+----------------
+1)get first rec from head
+2)get next node from current node pointer till "pos-1" times
+3)reassign pointers->time complex(o(n))
+
+  ----------------------------------------------------------------------------------------------
+  
+  5)Delete at positon:
+  --------------
+  1)get first rec from head
+2)get next node from current node pointer till "pos" times.keep track of prev node
+  
+3)Reassign pointer
+4)free moemory->time complex(o(n))
+----------------------------------------------------------------------------------------------
+
+6)Is empty or not:
+2)if head pointer null===empty
+--------------------------------------------------------------
+
+abstract data type:(idea)
+1)traverse
+2)Read/write
+3)Insert
+4)delete
